@@ -1,21 +1,25 @@
 import gym
 from ReinforcementLearning import Agent
 import numpy as np
+import time
 
-if __name__ == "__main__":
-    env = gym.make('LunarLander-v2')
-    agent = Agent(gamma=0.99, epsilon=1.0, batch_size=64, n_actions=4, eps_end=0.01, input_dims=[8], learning_rate=0.003)
+    
+
+def train_agent(env):
+    # parameters
+
+    gamma = 0.99
+    epsilon = 1.0
+    eps_end = 0.01
+    batch_size = 64
+    learning_rate = 0.001
+    n_actions = env.action_space.n
+    input_dims = [len(env.observation_space.high)]
+    agent = Agent(gamma=gamma, epsilon=epsilon, batch_size=batch_size, n_actions=n_actions, eps_end=eps_end, input_dims=input_dims, learning_rate=learning_rate)
     scores, eps_history = [], []
+    
+    # learning episodes
     n_games = 50
-
-    observation = env.reset()
-    for _ in range(1000):
-        env.render()
-        action = agent.choose_action(observation)
-        observation, reward, done, info = env.step(action) 
-        if done:
-            break
-    env.close()
 
     for game in range(n_games):
         score = 0
@@ -39,11 +43,19 @@ if __name__ == "__main__":
                 'average score %.2f' % avg_score,
                 'epsilon %.2f' % agent.epsilon)
     
+    return agent
+
+if __name__ == "__main__":
+    env = gym.make('CartPole-v1')
+    agent = train_agent(env)
+
+    done = False
     observation = env.reset()
-    for _ in range(10000):
+    while not done:
+        time.sleep(.01)
         env.render()
         action = agent.choose_action(observation)
-        observation, reward, done, info = env.step(action) 
-        if done:
-            break
-    env.close()
+        observation_, reward, done, info = env.step(action)
+        agent.store_transition(observation, action, reward, observation_, done)
+        agent.learn()
+        observation = observation_
