@@ -49,3 +49,11 @@ Here are a few results of running this algorithm. I ran the reinforcement learni
 |![Cart Pendulum Simulation Results](/media/10-games-lr-0.0001.png)10 episodes|![Cart Pendulum Simulation Results](/media/20-games-lr-0.0001.png)20 episodes|![Cart Pendulum Simulation Results](/media/50-games-lr-0.0001.png)50 episodes|
 |:-:|:-:|:-:|
 |![Cart Pendulum Simulation Results](/media/100-games-lr-0.0001.png)100 episodes|![Cart Pendulum Simulation Results](/media/200-games-lr-0.0001.png)200 episodes|![Cart Pendulum Simulation Results](/media/500-games-lr-0.0001.png)500 episodes|
+
+
+## Resources Used
+- https://docs.ray.io/en/latest/rllib-algorithms.html
+- https://towardsdatascience.com/ultimate-guide-for-ai-game-creation-part-2-training-e252108dfbd1
+- https://www.youtube.com/watch?v=wc-FxNENg9U
+- https://medium.com/distributed-computing-with-ray/anatomy-of-a-custom-environment-for-rllib-327157f269e5
+- https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html
