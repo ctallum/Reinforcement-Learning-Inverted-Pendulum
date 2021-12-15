@@ -26,7 +26,7 @@ python main.py
 ```
 
 ## Results
-Here are a few results of running this algorithm. I ran the reinforcement learning algorithm with episode counts of 
+Here are a few results of running this algorithm. I ran the reinforcement learning algorithm with episode counts of 10, 20, 50, 100, 200, and 500 with a learning rate of 0.001 and 0.0001.
 
 ### Learning rate: 0.001
 |![Cart Pendulum Simulation Results](/media/10-games-lr-0.001.gif)10 episodes|![Cart Pendulum Simulation Results](/media/20-games-lr-0.001.gif)20 episodes|![Cart Pendulum Simulation Results](/media/50-games-lr-0.001.gif)50 episodes|
