@@ -1,12 +1,12 @@
 # Reinforcement-Learning-Inverted-Pendulum
 
-For this project, I really wanted to experiment with reinforcment learning. For this, I am using the OpenAI Gym toolkit to acess a platform for the reinforcment learning enviornemnt. I decided to use reinforcement learning to controll an inverse pendulum because I did a similar problem in ESA, and I love the idea of controlling a pendulum with two drastically different methods.
+For this project, I really wanted to experiment with reinforcement learning. For this, I am using the OpenAI Gym toolkit to access a platform for the reinforcement learning environment. I decided to use reinforcement learning to control an inverse pendulum because I did a similar problem in ESA, and I love the idea of controlling a pendulum with two drastically different methods.
 
-To controll the inverse pendulum (or as it is called in the Gym toolkit, the cartpole), I am using deep Q-learning. Q-learning is a reinforcement learning algorithm that learns the reward output for a given input. For each new state input, Q-learning returns the optimal action. Deep Q-learning does the same thing, but instead of direclty storing the states and rewards, the algorithm relies on a neural network that connects the inputs to the output (q layer).
+To control the inverse pendulum (or as it is called in the Gym toolkit, the cartpole), I am using deep Q-learning. Q-learning is a reinforcement learning algorithm that learns the reward output for a given input. For each new state input, Q-learning returns the optimal action. Deep Q-learning does the same thing, but instead of directly storing the states and rewards, the algorithm relies on a neural network that connects the inputs to the output (q layer).
 
 In this project, I am using PyTorch to create and optimize the q-learning network. I am creating a network with an input layer that represents the state of the inverse pendulum. In this case, the inputs are position, positional velocity, velocity, and angular velocity. From this layer, the network has two hidden layers with 256 nodes. The last layer contains all the possible Q value actions which for this case is either a force to the right or left on the cart.
 
-The main file of this project allows the user to train the reinforcement learning algorithm for a range of episodes and with a varrying learning rate. I found that in training with a large number of episodes, the model becomes unpredictable and unreliable if the learning rate is set too high. For any training episode count of 300, I recommend setting the learning rate to 0.0001 or lower.
+The main file of this project allows the user to train the reinforcement learning algorithm for a range of episodes and with a varying learning rate. I found that in training with a large number of episodes, the model becomes unpredictable and unreliable if the learning rate is set too high. For any training episode count of 300, I recommend setting the learning rate to 0.0001 or lower.
 
 ## Installing Prerequisites
 This code relies on Pytorch and OpenAI Gym. To install run the commands below.
